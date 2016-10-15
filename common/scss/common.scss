@@ -44,6 +44,16 @@ p {
 ul {
   list-style: none;
 }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+form label {
+  cursor: pointer;
+}
+
 @include linkColor($linkColor);
 
 .fadeAlpha {
