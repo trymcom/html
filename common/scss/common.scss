@@ -22,13 +22,6 @@ body {
   color: $fontColor;
 }
 
-@media print {
-  body {
-    font-size: 1.4rem;
-    font-family: 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-size: 100%;
