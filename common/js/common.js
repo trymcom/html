@@ -305,7 +305,6 @@ common scripts
     $(window).on('load resize', function(){
 
       Common.resizeFnc();
-      Common.bgResize();
 
     });
 
