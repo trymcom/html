@@ -46,6 +46,12 @@ form label {
 
 @include linkColor($linkColor);
 
+// 商品リンク用リセット
+// a[href^="x-apple-data-detectors://"] {
+//   display: inline;
+//   pointer-events: none;
+// }
+
 .fadeAlpha {
   &.over * {
     opacity: .7;

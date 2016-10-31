@@ -135,9 +135,9 @@ common scripts
 
       $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
-          $('.pagetop').fadeIn();
+          $('.pagetop').stop(true, false).fadeIn();
         } else {
-          $('.pagetop').fadeOut();
+          $('.pagetop').stop(true, false).fadeOut();
         }
       });
 
