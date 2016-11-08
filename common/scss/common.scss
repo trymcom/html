@@ -18,7 +18,10 @@ html, body {
 }
 
 body {
-  font: 500 1.4rem/1.6 $sansSerif;
+  font-family: $sansSerif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
   color: $fontColor;
 }
 
