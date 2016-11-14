@@ -148,28 +148,18 @@ common scripts
 
       var url = window.location.pathname;
 
+      //ページのカレント
       $('.nav.pg li a[href="'+url+'"]').parent().addClass('current');
 
+      //ディレクトリのカレント
       var url = url.replace(/\w*\.html$/,'');
       $('.nav.dr li a[href="'+url+'"]').parent().addClass('current');
 
+      //CURRENT画像置換
       if ( $('.nrp li.current').size() > 0 ) {
         var $crimg = $('li.current').find("img[src*='_off']");
         $crimg.attr('src', $crimg.attr("src").replace(/_off/,'_on'));
       }
-
-      /* CURRENT画像置換
-      $('.nrp li').each(function(){
-
-        var off = $(this).find('img').attr('src'),
-             on = off.replace(/_off/, '_on');
-
-       if ( $(this).hasClass('current') ) {
-         $(this).find('img').attr('src', on);
-       }
-
-      });
-      */
 
     },
 
