@@ -284,7 +284,7 @@ common scripts
     Common.smoothScroll();
     Common.accordion();
     Common.tab();
-    Common.currentNav();
+    //Common.currentNav();
     Common.rollover();
     Common.popup();
     //Common.getSpImg();
