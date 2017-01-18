@@ -156,7 +156,7 @@ common scripts
       $('.nav.dr li a[href="'+url+'"]').parent().addClass('current');
 
       //CURRENT画像置換
-      if ( $('.nrp li.current').size() > 0 ) {
+      if ( $('.nrp li.current').length > 0 ) {
         var $crimg = $('li.current').find("img[src*='_off']");
         $crimg.attr('src', $crimg.attr("src").replace(/_off/,'_on'));
       }
