@@ -281,6 +281,7 @@ common scripts
 
   $(function() {
 
+    Common.fadeAlpha();
     Common.smoothScroll();
     Common.accordion();
     Common.tab();
