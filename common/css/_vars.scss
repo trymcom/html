@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* =========================================================
+ VARIABLE
+========================================================= */
+
 $sans: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
 $serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 $fontColor: #4c4c4c;
@@ -7,13 +11,51 @@ $linkColor: #4c4c4c;
 $siteWidth: 960px;
 $mainColor: #006564;
 
-//IE用アンチエイリアス
+$breakpoints: (
+  'sm': 340,
+  'md': 768,
+  'lg': 1024,
+  'xl': 1200,
+) !default;
+
+/* =========================================================
+ MIXIN
+========================================================= */
+
+/* ----- BREAK POINT ----- */
+@mixin mq($mq, $bp1: md, $bp2: lg) {
+
+  $w1    : map-get($breakpoints, $bp1);
+  $w2    : map-get($breakpoints, $bp2);
+  $min1  : 'min-width: #{$w1 / 16}em';
+  $min2  : 'min-width: #{($w1 + 1) / 16}em';
+  $max1  : 'max-width: #{($w1 + 1) / 16}em';
+  $max2  : 'max-width: #{($w2) / 16}em';
+
+  @if $mq == min {
+    @media screen and ($min1) {
+      @content;
+    }
+  }
+  @else if $mq == max {
+    @media screen and ($max1) {
+      @content;
+    }
+  }
+  @else if $mq == min-max {
+    @media screen and ($min2) and ($max2) {
+      @content;
+    }
+  }
+}
+
+/* ----- IE用アンチエイリアス ----- */
 @mixin serif {
   font-family: $serif;
   -ms-transform: rotate(0.028deg);
 }
 
-//clearfix
+/* ----- CLEARFIX ----- */
 @mixin cf {
   %cf:after {
     display: block;
@@ -22,7 +64,7 @@ $mainColor: #006564;
   }
 }
 
-//link_color
+/* ----- LINK COLOR ----- */
 @mixin linkColor($color) {
   a {
     text-decoration: none;
@@ -42,13 +84,14 @@ $mainColor: #006564;
   }
 }
 
+/* ----- HIDDEN TEXT ----- */
 @mixin textHidden {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
 }
 
-//flex
+/* ----- FLEX ----- */
 @mixin flex {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -58,12 +101,12 @@ $mainColor: #006564;
           flex-wrap: wrap;
 }
 
-//bgHeight
+/* ----- BACKGROUND HEIGHT ----- */
 @mixin bgHeight($width, $height) {
   padding-top: ($height / $width * 100%);
 }
 
-//gradation
+/* ----- GRADATION ----- */
 @mixin gradient($start-color, $end-color, $orientation) {
   background: $start-color;
 
