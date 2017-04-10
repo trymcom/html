@@ -27,10 +27,10 @@ $breakpoints: (
 
   $w1    : map-get($breakpoints, $bp1);
   $w2    : map-get($breakpoints, $bp2);
-  $min1  : 'min-width: #{$w1 / 16}em';
-  $min2  : 'min-width: #{($w1 + 1) / 16}em';
-  $max1  : 'max-width: #{($w1 + 1) / 16}em';
-  $max2  : 'max-width: #{($w2) / 16}em';
+  $min1  : 'min-width: #{convert-em($w1)}';
+  $min2  : 'min-width: #{convert-em($w1, 1)}';
+  $max1  : 'max-width: #{convert-em($w1, 1)}';
+  $max2  : 'max-width: #{convert-em($w2)}';
 
   @if $mq == min {
     @media screen and ($min1) {
@@ -47,6 +47,10 @@ $breakpoints: (
       @content;
     }
   }
+}
+
+@function convert-em($width, $ge: 0) {
+  @return '#{($width + $ge) / 16}em';
 }
 
 /* ----- IE用アンチエイリアス ----- */
