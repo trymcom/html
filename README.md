@@ -5,3 +5,7 @@
 * [SASSについて](https://github.com/trymcom/html/wiki/SASS%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 * [ベーシック認証の設定ファイル（プライベートリポジトリ）](https://github.com/trymcom/htaccess)
 * [Gulp](https://github.com/trymcom/gulp)
+
+## 公開前に下記をチェック
+
+[公開前チェックリスト](https://docs.google.com/spreadsheets/d/19vE9m4C1Lg-PtidlZTlGazLzOQalAMwAySX5BFn4gAo/edit#gid=0)
