@@ -67,6 +67,13 @@ form label {
 }
 
 //このエリアはサンプルです。削除してください
+//
+// PREFIX
+// div{
+//   @include valuePrefix(display,flex);
+// }
+//
+// CLEARFIX
 // .example{
 //   @extend %cf;
 // }

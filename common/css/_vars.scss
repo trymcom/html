@@ -11,6 +11,12 @@ $linkColor: #4c4c4c;
 $siteWidth: 960px;
 $mainColor: #006564;
 
+/* =========================================================
+ MIXIN
+========================================================= */
+
+/* ----- BREAK POINT ----- */
+
 $breakpoints: (
   'sm': 340,
   'md': 768,
@@ -18,11 +24,6 @@ $breakpoints: (
   'xl': 1200,
 ) !default;
 
-/* =========================================================
- MIXIN
-========================================================= */
-
-/* ----- BREAK POINT ----- */
 @mixin mq($mq, $bp1: md, $bp2: lg) {
 
   $w1    : map-get($breakpoints, $bp1);
@@ -51,6 +52,22 @@ $breakpoints: (
 
 @function convert-em($width, $ge: 0) {
   @return '#{($width + $ge) / 16}em';
+}
+
+/* ----- PREFIX ----- */
+
+$setPrefix: -webkit-,-moz-,-ms-, '';
+
+@mixin namePrefix($name, $value) {
+  @each $prefix in $setPrefix {
+    #{$prefix}#{$name}: $value;
+  }
+}
+
+@mixin valuePrefix($name, $value) {
+  @each $prefix in $setPrefix {
+    #{$name}: #{$prefix}$value;
+  }
 }
 
 /* ----- IE用アンチエイリアス ----- */
