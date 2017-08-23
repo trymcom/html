@@ -47,6 +47,10 @@ form label {
   cursor: pointer;
 }
 
+img {
+  image-rendering: pixelated;
+}
+
 @include linkColor($linkColor);
 
 // 商品リンク用リセット
